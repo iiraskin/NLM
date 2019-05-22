@@ -116,15 +116,15 @@ class AuthorsAttribution:
                 output_file = open(name + '_parts_of_speech.txt', 'w', encoding='utf-8')
                 total = np.zeros(7)
                 for line in parts_of_speech[name]:
-                    output_file.write('NOUNS: ' + str(line[0]) + '  VERBS: ' + str(line[1]) + '  ADJECTIVES: '
-                                      + str(line[2]) + '  SERVICES: ' + str(line[3]) + '  В: ' + str(line[4])
-                                      + '  НЕ: ' + str(line[5]) + '  SENTENCES: ' + str(line[6]) + '\n')
+                    output_file.write('NOUNS: ' + str(line[1]) + '  VERBS: ' + str(line[2]) + '  ADJECTIVES: '
+                                      + str(line[3]) + '  SERVICES: ' + str(line[4]) + '  В: ' + str(line[5])
+                                      + '  НЕ: ' + str(line[6]) + '  SENTENCES: ' + str(line[0]) + '\n')
                     total += line
 
                 total /= len(parts_of_speech[name])
-                output_file.write('\nAVERAGE:\nNOUNS: ' + str(total[0]) + '  VERBS: ' + str(total[1]) + '  ADJECTIVES: '
-                                  + str(total[2]) + '  SERVICES: ' + str(total[3]) + '  В: ' + str(total[4])
-                                  + '  НЕ: ' + str(total[5]) + '  SENTENCES: ' + str(total[6]) + '\n')
+                output_file.write('\nAVERAGE:\nNOUNS: ' + str(total[1]) + '  VERBS: ' + str(total[2]) + '  ADJECTIVES: '
+                                  + str(total[3]) + '  SERVICES: ' + str(total[4]) + '  В: ' + str(total[5])
+                                  + '  НЕ: ' + str(total[6]) + '  SENTENCES: ' + str(total[0]) + '\n')
                 output_file.close()
 
         return parts_of_speech
